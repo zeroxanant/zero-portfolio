@@ -1,0 +1,282 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(circle at top, #101525 0, #05060a 55%, #020308 100%);
+  color: #f5f7ff;
+  min-height: 100vh;
+}
+
+/* Soft glow in background */
+.bg-glow {
+  position: fixed;
+  inset: -200px;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(0, 229, 255, 0.12), transparent 55%),
+    radial-gradient(circle at 90% 0%, rgba(255, 111, 207, 0.13), transparent 55%),
+    radial-gradient(circle at 50% 100%, rgba(153, 102, 255, 0.1), transparent 55%);
+  z-index: -1;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(12px);
+  background: linear-gradient(to bottom, rgba(5, 7, 13, 0.95), transparent);
+  z-index: 10;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-main {
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  font-size: 14px;
+}
+
+.logo-sub {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.links a {
+  margin-left: 18px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #d0d5ff;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.links a:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.6fr);
+  gap: 32px;
+  padding: 60px 8% 40px;
+  align-items: center;
+}
+
+.tagline {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #9aa5ff;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 5vw, 40px);
+  margin-bottom: 12px;
+}
+
+.hero h1 span {
+  color: #00e5ff;
+}
+
+.subtext {
+  max-width: 480px;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.86;
+}
+
+.hero-actions {
+  margin-top: 22px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 9px 18px;
+  font-size: 14px;
+  border-radius: 999px;
+  border: 1px solid #2a3145;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #00d5ff, #ff6fcb);
+  color: #05060a;
+  font-weight: 600;
+  border: none;
+}
+
+.btn.ghost {
+  background: rgba(9, 12, 22, 0.85);
+  color: #e3e6ff;
+}
+
+.btn:hover {
+  filter: brightness(1.05);
+}
+
+/* Hero side card */
+.hero-card {
+  background: rgba(6, 8, 16, 0.9);
+  border-radius: 18px;
+  padding: 20px 20px 22px;
+  border: 1px solid rgba(107, 125, 255, 0.35);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.6);
+}
+
+.hero-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #9aa4ff;
+  margin-bottom: 8px;
+}
+
+.hero-card h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.hero-mini {
+  font-size: 13px;
+  opacity: 0.84;
+  line-height: 1.5;
+}
+
+/* Sections */
+.section {
+  padding: 40px 8% 20px;
+}
+
+.section-title {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #e5e8ff;
+}
+
+.about p {
+  max-width: 700px;
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+/* Skills */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+}
+
+.skill-card {
+  background: rgba(7, 10, 20, 0.9);
+  border-radius: 14px;
+  padding: 14px 14px 16px;
+  border: 1px solid rgba(63, 75, 125, 0.7);
+  font-size: 13px;
+}
+
+.skill-card h3 {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #f0f3ff;
+}
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.project-card {
+  background: rgba(7, 10, 20, 0.92);
+  border-radius: 14px;
+  padding: 16px 14px 18px;
+  border: 1px solid rgba(87, 104, 180, 0.8);
+  font-size: 13px;
+}
+
+.project-card h3 {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.project-card p {
+  margin-bottom: 6px;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.project-card .stack {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #8fd8ff;
+  text-decoration: none;
+}
+
+/* Contact */
+.contact p {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 8px;
+}
+
+.contact-details a {
+  color: #8fd8ff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 12px;
+  opacity: 0.7;
+  padding: 18px 8% 28px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+  }
+  .hero-card {
+    margin-top: 4px;
+  }
+  .nav {
+    padding-inline: 5%;
+  }
+  .section {
+    padding-inline: 5%;
+  }
+  .links a {
+    margin-left: 10px;
+    font-size: 12px;
+  }
+}
